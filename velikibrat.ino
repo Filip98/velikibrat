@@ -1,3 +1,5 @@
+uint8_t pinState = 1; // HIGH
+
 void setup() {
   // put your setup code here, to run once:
   pinMode(8, OUTPUT);
@@ -5,9 +7,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  //digitalWrite(8, !digitalRead(8));
-  digitalWrite(8, HIGH);
-  delay(500);
-  digitalWrite(8, LOW);
+  digitalWrite(8, pinState);
+  pinState = !pinState;
   delay(500);
 }
