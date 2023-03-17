@@ -1,3 +1,5 @@
+// IT WORKS
+
 uint8_t pinState = 1; // HIGH
 
 void setup() {
@@ -9,5 +11,5 @@ void loop() {
   // put your main code here, to run repeatedly:
   digitalWrite(8, pinState);
   pinState = !pinState;
-  delay(500);
+  delay(250);
 }
