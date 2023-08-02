@@ -2,13 +2,17 @@
 
 const int defaultPinNumber = 9;
 const int maximumPinNumber = 12;
-const int defaultDelay = 900;
+const double defaultDelay = 900.;
 
 int pinDirection = 1;
 int pinNumber = defaultPinNumber;
 
 int delayDirection = 1;
-int delayTime = defaultDelay;
+double delayTime = defaultDelay;
+
+double getDelayReduction(int x) {
+  return 10 * pow(9, x / defaultDelay);
+}
 
 void setup() {
   // put your setup code here, to run once:
@@ -35,7 +39,7 @@ void loop() {
   digitalWrite(pinNumber, LOW);
   delay(delayTime);
 
-  delayTime -= 30 * delayDirection;
+  delayTime -= getDelayReduction(delayTime) * delayDirection;
   pinNumber += 1 * pinDirection;
 
   if (pinNumber == maximumPinNumber || pinNumber == defaultPinNumber) {
