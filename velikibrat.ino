@@ -11,7 +11,7 @@ int delayDirection = 1;
 double delayTime = defaultDelay;
 
 double getDelayReduction(int x) {
-  return 10 * pow(10, x / defaultDelay);
+  return 10 * pow(9, x / defaultDelay);
 }
 
 void setup() {
